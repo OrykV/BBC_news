@@ -15,8 +15,8 @@ class Database(object):
         Database.DATABASE[collection].insert(data)
 
     @staticmethod
-    def find(collection, query, ):
-         return Database.DATABASE[collection].find(query).sort('saved_date', -1)
+    def find(collection, query):
+        return Database.DATABASE[collection].find(query).sort('saved_date', -1)
 
     @staticmethod
     def find_one(collection, query):

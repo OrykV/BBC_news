@@ -13,10 +13,9 @@ Database.initialize()
 
 
 @app.route('/')
-@user_decorators.requires_login
 def new():
     news = Item.all()
-    return render_template('new.html', news=news)
+    return render_template('base.html', news=news)
 
 
 @app.route('/download_new')
@@ -25,7 +24,7 @@ def download():
     new_items = Parser.save_news()
     quantity = len(new_items)
     flash(f'{quantity} items was added!')
-    return render_template('base.html', news=new_items, quantity=quantity)
+    return render_template('new.html', news=new_items, quantity=quantity)
 
 
 @app.route('/login', methods=["GET", "POST"])
@@ -65,6 +64,21 @@ def signup():
     return render_template('user/signup.html')
 
 
+@app.route('/tools', methods=["GET", "POST"])
+@user_decorators.requires_login
+def tools():
+    if request.method == 'POST':
+        item_id = request.form['item_id']
+        Item.remove_item(item_id)
+        flash(f'Item with item id {item_id} was deleted!')
+        news = Item.all()
+        return render_template('tools.html', news=news)
+    news = Item.all()
+    return render_template('tools.html', news=news)
+
+
+
+
 @app.route("/logout")
 def logout():
     session.clear()
@@ -78,3 +92,6 @@ if __name__ == '__main__':
 # pars = Item.all()
 # pars = Item.find_needed()
 
+
+
+# Item.remove_item("bda20a8d7fb5490da98cc10b8f832e2c")

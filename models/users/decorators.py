@@ -8,7 +8,7 @@ def requires_login(f):
     def decorated_function(*args, **kwargs):
         if 'email' not in session.keys() or session['email'] is None:
             flash(u'You need to be signed in for this page.')
-            return redirect(url_for('login', next=request.path))
+            return redirect(url_for('home', next=request.path))
         return f(*args, **kwargs)
     return decorated_function
 

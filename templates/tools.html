@@ -1,6 +1,4 @@
 {% extends "sample.html" %}
-
-
 {% with messages = get_flashed_messages() %}
   {% if messages %}
     {% for message in messages %}
@@ -12,6 +10,7 @@
   {% endif %}
 {% endwith %}
 {% block content %}
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand" href="{{ url_for('new') }}">BBC_news</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,26 +33,37 @@
     </ul>
   </div>
 </nav>
- <div class="list-group">
-     {% for i in news %}
-    <a href="{{i['url']}}" class="list-group-item list-group-item-action" target="_blank">
-        <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">{{i['header']}}</h5>
-            <small>{{i['saved_date']}}</small>
-        </div>
-        <p class="mb-1">{{i['summary']}}</p>
-        <small>{{i['url']}}</small>
-    </a>
-    {% endfor %}
+<div class="form">
+        <form action="{{ url_for('tools') }}" method="post">
+            <div class="form-group">
+                <label for="item_id">Permanently delete item</label>
+                <input type="text" class="form-control" id="item_id" name="item_id" placeholder="Item_id">
+                <span id="item_idHelpBlock" class="help-block">Be sure to enter a valid e-mail, as that's where we'll send alerts.</span>
+            </div>
+            <button type="submit" class="btn btn-danger">Delete selected item!</button>
+        </form>
 </div>
 {% with messages = get_flashed_messages() %}
   {% if messages %}
     {% for message in messages %}
         {%if message != 'You need to be signed in for this page.' %}
-            <div class="alert alert-success flashes" role="alert">{{ message }}</div>
+            <div class="alert alert-warning flashes" role="alert">{{ message }}</div>
         {% endif %}
     {% endfor %}
     </ul>
   {% endif %}
 {% endwith %}
-{% endblock %}
+<div class="list-group">
+     {% for i in news %}
+    <div  class="list-group-item list-group-item-action" target="_blank">
+        <div class="d-flex w-100 justify-content-between">
+            <a href="{{i['url']}}"><h5 class="mb-1">{{i['header']}}</h5></a>
+            <small>{{i['_id']}}</small>
+        </div>
+        <p class="mb-1">{{i['summary']}}</p>
+        <a href="{{i['url']}}"><small>{{i['url']}}</small></a>
+    </div>
+    {% endfor %}
+</div>
+    {% endblock  %}
+
