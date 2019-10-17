@@ -1,51 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Price Alerts</title>
-
-    {% include 'html_dependencies.jinja2' %}
-
-</head>
-<body>
-
-<nav class="navbar navbar-fixed-top navbar-default">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/" title="Home">Pricing</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="#" title="Stores">Stores</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                {% if session['email'] %}
-                    <li><a href="#" title="Your Alerts"><span class="glyphicon glyphicon-user"></span> Your Alerts</a></li>
-                    <li><a href="#" title="Log Out"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
-                {% else %}
-                    <li><a href="#" title="Sign up"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
-                    <li><a href="#" title="Log in"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
-                {% endif %}
-            </ul>
-            ​
-        </div>
-    </div>
+{% extends "new.html" %}
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="{{ url_for('new') }}">BBC_news</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('download') }}">Download new</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Tools</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+      </li>
+    </ul>
+  </div>
 </nav>
-
-<div class="content container">
-    {% block content %}
-
-    {% endblock %}
+ <div class="list-group">
+     {% for i in news %}
+    <a href="{{i['url']}}" class="list-group-item list-group-item-action" target="_blank">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{i['header']}}</h5>
+            <small>{{i['saved_date']}}</small>
+        </div>
+        <p class="mb-1">{{i['summary']}}</p>
+        <small>{{i['url']}}</small>
+    </a>
+    {% endfor %}
 </div>
-
-</body>
-</html>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+        {%if message != 'You need to be signed in for this page.' %}
+            <div class="alert alert-success flashes" role="alert">{{ message }}</div>
+        {% endif %}
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% endblock %}
