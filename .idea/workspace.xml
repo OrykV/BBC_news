@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3892a115-b219-4d61-8ac4-8df2f43bfe64" name="Default Changelist" comment="Registration and loggin was added">
-      <change afterPath="$PROJECT_DIR$/templates/sample.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/tools.html" afterDir="false" />
+    <list default="true" id="3892a115-b219-4d61-8ac4-8df2f43bfe64" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/users/decorators.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/users/decorators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/new.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/signup.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -142,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571301461395</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Deleting items was added">
+      <created>1571323212358</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1571323212358</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -160,6 +158,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Registration and loggin was added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Registration and loggin was added" />
+    <MESSAGE value="Deleting items was added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleting items was added" />
   </component>
 </project>

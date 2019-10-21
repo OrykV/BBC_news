@@ -88,10 +88,3 @@ def logout():
 if __name__ == '__main__':
     app.run()
 
-# Parser.save_news()
-# pars = Item.all()
-# pars = Item.find_needed()
-
-
-
-# Item.remove_item("bda20a8d7fb5490da98cc10b8f832e2c")
