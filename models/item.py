@@ -12,18 +12,9 @@ class Item(object):
         self.url = url
         self._id = uuid.uuid4().hex if _id is None else _id
         self.saved_date = datetime.datetime.today().strftime('%d %b %Y') if saved_date is None else saved_date
-        # self.saved_time = datetime.datetime.today().strftime("%H:%M:%S%f") if saved_time is None else saved_time
 
     def __repr__(self):
         return f"{self.header} || {self.summary} || {self.url} || {self.saved_date} \n"
-
-    # def date_date(self):
-    #     saved_date = self.saved_date.strftime('%d %b %Y')
-    #     return saved_date
-    #
-    # def date_time(self):
-    #     saved_time = self.saved_date.strftime("%H:%M:%S%f")
-    #     return saved_time
 
     def json(self):
         return {
@@ -39,6 +30,7 @@ class Item(object):
 
     @staticmethod
     def parse_news():
+        """ This method parse content from url"""
         URL = "https://www.bbc.com/ukrainian/news"
         TAG_NAME = "div"
         QUERY = {"class": "eagle-item"}
@@ -59,10 +51,6 @@ class Item(object):
     @classmethod
     def all(cls):
         return [cls(**elem) for elem in Database.find('news', {})]
-
-    @classmethod
-    def find_needed(cls, query):
-        return [cls(**elem) for elem in Database.find('news', {'saved_date': query})]
 
 
 

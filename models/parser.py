@@ -5,6 +5,7 @@ from common.database import Database
 class Parser:
     @staticmethod
     def save_news():
+        """ Divides news for header, summary and url and save it to db"""
         news = Item.parse_news()
         array = []
         for element in news:
@@ -21,6 +22,7 @@ class Parser:
 
     @staticmethod
     def retrieve_news(header):
+        """ Checks if such news exists in db"""
         data = Database.find_one('news', {'header': header})
         return data
 

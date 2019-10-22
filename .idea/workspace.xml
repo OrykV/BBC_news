@@ -4,6 +4,14 @@
     <list default="true" id="3892a115-b219-4d61-8ac4-8df2f43bfe64" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/item.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/item.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/users/decorators.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/users/decorators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/users/errors.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/users/errors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/users/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/users/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Home.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -140,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571323212358</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added button delete item">
+      <created>1571640772434</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1571640772434</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -159,6 +174,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Registration and loggin was added" />
     <MESSAGE value="Deleting items was added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Deleting items was added" />
+    <MESSAGE value="Added button delete item" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added button delete item" />
   </component>
 </project>

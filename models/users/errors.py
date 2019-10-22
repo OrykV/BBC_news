@@ -1,3 +1,6 @@
+""" This file wa created to store errors which should be raised"""
+
+
 class UserError(Exception):
     def __init__(self, message):
         self.message = message

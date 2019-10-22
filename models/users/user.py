@@ -13,18 +13,11 @@ class User(object):
     def __repr__(self):
         return "<User {}>".format(self.email)
 
-    @classmethod
-    def find_by_email(cls, email):
-        return cls(**Database.find_one('users', {'email': email}))
-
     @staticmethod
     def is_login_valid(email, password):
         """
         This method verifies that an e-mail/password combo (as sent by the site forms) is valid or not.
         Checks that the e-mail exists, and that the password associated to that e-mail is correct.
-        :param email: The user's email
-        :param password: A sha512 hashed password
-        :return: True if valid, False otherwise
         """
         user_data = Database.find_one("users", {"email": email})  # Password in sha512 -> pbkdf2_sha512
         if user_data is None:
@@ -41,9 +34,6 @@ class User(object):
         """
         This method registers a user using e-mail and password.
         The password already comes hashed as sha-512.
-        :param email: user's e-mail (might be invalid)
-        :param password: sha512-hashed password
-        :return: True if registered successfully, or False otherwise (exceptions can also be raised)
         """
         user_data = Database.find_one("users", {"email": email})
 

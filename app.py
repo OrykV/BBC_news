@@ -36,7 +36,7 @@ def login():
         try:
             if User.is_login_valid(email, password):
                 session['email'] = email
-                return redirect(url_for("new"))
+                return redirect(url_for('new'))
         except UserErrors.IncorrectPasswordError as e:
             return e.message
     return render_template('user/login.html')
@@ -58,7 +58,7 @@ def signup():
         try:
             if User.register_user(email, password):
                 session['email'] = email
-                return redirect(url_for("new"))
+                return render_template(url_for("new"))
         except UserErrors.UserError as e:
             return e.message
     return render_template('user/signup.html')
@@ -75,8 +75,6 @@ def tools():
         return render_template('tools.html', news=news)
     news = Item.all()
     return render_template('tools.html', news=news)
-
-
 
 
 @app.route("/logout")
