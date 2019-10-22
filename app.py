@@ -58,7 +58,7 @@ def signup():
         try:
             if User.register_user(email, password):
                 session['email'] = email
-                return render_template(url_for("new"))
+                return redirect(url_for('new'))
         except UserErrors.UserError as e:
             return e.message
     return render_template('user/signup.html')
