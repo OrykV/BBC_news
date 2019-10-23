@@ -19,7 +19,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{{ url_for('list_news') }}">List news <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{{ url_for('download') }}">Download new</a>
@@ -42,6 +42,10 @@
             </div>
             <button type="submit" class="btn btn-danger">Delete selected item!</button>
         </form>
+        <form action="{{ url_for('permanently_delete') }}" method="post">
+            <button type="submit" class="btn btn-danger">Clear DB!</button>
+        </form>
+
 </div>
 {% with messages = get_flashed_messages() %}
   {% if messages %}

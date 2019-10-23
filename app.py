@@ -14,8 +14,10 @@ Database.initialize()
 
 @app.route('/')
 def new():
-    news = Item.all()
-    return render_template('base.html', news=news)
+    if 'email' not in session.keys() or session['email'] is None:
+        return render_template('home.html')
+    return redirect(url_for('list_news'))
+
 
 
 @app.route('/download_new')
@@ -42,11 +44,10 @@ def login():
     return render_template('user/login.html')
 
 
-@app.route('/home')
-def home():
-    if 'email' not in session.keys() or session['email'] is None:
-        return render_template('home.html')
-    return redirect(url_for('new'))
+@app.route('/list')
+def list_news():
+    news = Item.all()
+    return render_template('base.html', news=news)
 
 
 @app.route('/signup',  methods=["GET", "POST"])
@@ -77,10 +78,17 @@ def tools():
     return render_template('tools.html', news=news)
 
 
+@app.route('/permanently_delete')
+@user_decorators.requires_login
+def permanently_delete():
+    Item.delete_all()
+    return redirect(url_for('new'))
+
+
 @app.route("/logout")
 def logout():
     session.clear()
-    return redirect(url_for("home"))
+    return render_template('home.html')
 
 
 if __name__ == '__main__':

@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3892a115-b219-4d61-8ac4-8df2f43bfe64" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/requirments.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/tools.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/tools.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +164,21 @@
       <option name="project" value="LOCAL" />
       <updated>1571736068505</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Requirements was added">
+      <created>1571812265058</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1571812265058</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Requirements was added">
+      <created>1571812289601</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1571812289601</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -183,6 +200,7 @@
     <MESSAGE value="Added button delete item" />
     <MESSAGE value="Сomments have been added" />
     <MESSAGE value="Bug with user registration was fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug with user registration was fixed" />
+    <MESSAGE value="Requirements was added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Requirements was added" />
   </component>
 </project>
