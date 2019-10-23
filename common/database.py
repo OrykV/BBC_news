@@ -2,7 +2,7 @@ import pymongo
 
 
 class Database(object):
-    URI = "mongodb://127.0.0.1:27017"
+    URI = "mongodb://<dbuser>:<dbpassword>@ds237588.mlab.com:37588/heroku_2w3vn51g"
     DATABASE = None
 
     @staticmethod
