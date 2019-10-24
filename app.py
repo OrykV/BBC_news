@@ -34,13 +34,9 @@ def login():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-
-        try:
-            if User.is_login_valid(email, password):
-                session['email'] = email
-                return redirect(url_for('new'))
-        except UserErrors.IncorrectPasswordError as e:
-            return e.message
+        if User.is_login_valid(email, password):
+            session['email'] = email
+            return redirect(url_for('new'))
     return render_template('user/login.html')
 
 

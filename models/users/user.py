@@ -1,4 +1,5 @@
 import uuid
+from flask import flash, redirect, url_for
 from common.database import Database
 from common.utils import Utils
 import models.users.errors as UserErrors
@@ -21,12 +22,13 @@ class User(object):
         """
         user_data = Database.find_one("users", {"email": email})  # Password in sha512 -> pbkdf2_sha512
         if user_data is None:
-            # Tell the user that their e-mail doesn't exist
-            raise UserErrors.UserNotExistsError("Your user does not exist.")
+            flash(f'User {email} does not exist. Try again or')
+            redirect(url_for('login'))
+            return False
         if not Utils.check_hashed_password(password, user_data['password']):
-            # Tell the user that their password is wrong
-            raise UserErrors.IncorrectPasswordError("Your password was wrong.")
-
+            flash('Your password was wrong. Try again!')
+            redirect(url_for('login'))
+            return False
         return True
 
     @staticmethod
@@ -36,14 +38,15 @@ class User(object):
         The password already comes hashed as sha-512.
         """
         user_data = Database.find_one("users", {"email": email})
-
         if user_data is not None:
-            raise UserErrors.UserAlreadyRegisteredError("The e-mail you used to register already exists.")
+            flash(f'The e-mail {email} you used to register already exists. Try again or')
+            redirect(url_for('login'))
+            return False
         if not Utils.email_is_valid(email):
-            raise UserErrors.InvalidEmailError("The e-mail does not have the right format.")
-
+            flash('The e-mail does not have the right format. Try again!')
+            redirect(url_for('signup'))
+            return False
         User(email, Utils.hash_password(password)).save_to_db()
-
         return True
 
     def save_to_db(self):
