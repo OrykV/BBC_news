@@ -35,16 +35,17 @@
   </div>
 </nav>
  <div class="list-group">
-     {% for i in news %}
-    <a href="{{i['url']}}" class="list-group-item list-group-item-action" target="_blank">
-        <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">{{i['header']}}</h5>
-            <small>{{i['saved_date']}}</small>
-        </div>
-        <p class="mb-1">{{i['summary']}}</p>
-        <small>{{i['url']}}</small>
-    </a>
-    {% endfor %}
+
+{% for i in news %}
+     <a href="{{i['url']}}" class="list-group-item list-group-item-action" target="_blank">
+         <div class="d-flex w-100 justify-content-between">
+             <h5 class="mb-1">{{i['header']}}</h5>
+             <small>{{i['saved_date']}}</small>
+         </div>
+         <p class="mb-1">{{i['summary']}}</p>
+         <small>{{i['url']}}</small>
+     </a>
+{% endfor %}
 </div>
 {% with messages = get_flashed_messages() %}
   {% if messages %}

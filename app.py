@@ -78,14 +78,14 @@ def tools():
     return render_template('tools.html', news=news)
 
 
-@app.route('/permanently_delete')
+@app.route('/permanently_delete', methods=["GET", "POST"])
 @user_decorators.requires_login
 def permanently_delete():
     Item.delete_all()
     return redirect(url_for('new'))
 
 
-@app.route("/logout")
+@app.route("/logout", methods=["GET", "POST"])
 def logout():
     session.clear()
     return render_template('home.html')

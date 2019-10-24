@@ -42,10 +42,6 @@
             </div>
             <button type="submit" class="btn btn-danger">Delete selected item!</button>
         </form>
-        <form action="{{ url_for('permanently_delete') }}" method="post">
-            <button type="submit" class="btn btn-danger">Clear DB!</button>
-        </form>
-
 </div>
 {% with messages = get_flashed_messages() %}
   {% if messages %}
@@ -69,5 +65,6 @@
     </div>
     {% endfor %}
 </div>
+<a href="{{ url_for('permanently_delete') }}"><button type="button" class="btn btn-danger btn-lg btn-block">Clear DB!</button></a>
     {% endblock  %}
 
