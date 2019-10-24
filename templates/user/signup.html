@@ -6,7 +6,7 @@
         {%if message == 'The e-mail does not have the right format. Try again!' %}
             <div class="alert alert-warning flashes" role="alert">{{ message }}</div>
         {% else %}
-            <div class="alert alert-warning flashes" role="alert">{{ message }}<a href="{{ url_for('signup') }}"> Log in .</a></div>
+            <div class="alert alert-warning flashes" role="alert">{{ message }}<a href="{{ url_for('login') }}"> Log in .</a></div>
         {% endif %}
     {% endfor %}
     </ul>
